@@ -1,62 +1,39 @@
 import java.util.*;
-class Mani
+class Strman
 {
-int ch;
-void manu()
-{
-Scanner sc = new Scanner(System.in);
-
-
-String a ;
-
-
-do 
-{System.out.println("enter the string");
-a = sc.next();
-System.out.println("STRING METHODS \n 1.toupper \n 2.tolower\n3.replace \n4.concatination \n 5.length \n6.convert to charaaray \n 7.index of substring  ");
-System.out.println("select any option");
-ch = sc.nextInt();
-switch(ch)
-{
-case 1:
-	System.out.println(a.toUpperCase());break;
-case 2: 
-
-System.out.println(a.toUpperCase());break;
-case 3:System.out.println("enter a string to replace");
-String b =sc.next();
-System.out.println("what you want to replace:");
- String c = sc.next();
-System.out.println(a.replace(b,c));
-break;
-case 4:
-String s;
-System.out.println("enter a string to concatnation");
-s =sc.next();
-System.out.println(a.concat(s));break;
-case 5:
-
-System.out.println("length of string "+a+" is "+a.length());break;
-
-
-
-case 6:
-char charray[] = a.toCharArray();
-System.out.println("convert to char array");
-for(char i : charray)
-{
-System.out.println(i);
-}
-break;
-default:
-System.out.println("invalid");
-
-}}
-while(ch!=1);
-}
-public static void main(String args[])
-{
-Mani m1 = new Mani();
-m1.manu();
-}
+	public static void main(String args[])
+	{
+		Scanner sc =new Scanner(System.in);
+	System.out.println("String MANIPULATION METHODS");
+	System.out.println("enter a string: ");
+	String str1=sc.nextLine();
+	System.out.println("enter another string: ");
+	String str2=sc.nextLine();
+	String str3=str1.concat(str2);
+	System.out.println("After String concatenation: " + str3);
+	System.out.println("Length of concatnated string is : "+ str3.length());
+	System.out.println(str3+" converted to uppercase : "+ str3.toUpperCase());
+	System.out.println(str3+" after replacing all occurence of e to a : "+str3.replace('e','a'));
+	char ch[]=str3.toCharArray();
+	for(int i=0;i<ch.length;i++)
+	{	System.out.println("character at "+(i+1)+" is "+ch[i]);
+		
+	}
+	System.out.println("Index position of the substring "+str2+" is "+str3.indexOf(str2));
+	System.out.println("\n StringBuffer CLASS METHODS");
+	System.out.println("enter a string: ");
+	String temp=sc.nextLine();
+	StringBuffer str=new StringBuffer(temp);
+	System.out.println("enter another string: ");
+	String temp1=sc.nextLine();
+	str.append(temp1);
+	System.out.println(temp+" after String concatenation: " + str);
+	System.out.println("Length of string :"+temp1+" is "+temp1.length());
+	System.out.println("enter a substring: ");
+	String temp2=sc.nextLine();
+	System.out.println("enter a position where the substring has to be inserted: ");
+	int pos =sc.nextInt();
+	str.insert(pos,temp2);
+	System.out.println("changed string : "+str);
+	}
 }
